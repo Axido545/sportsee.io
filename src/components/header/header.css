@@ -1,0 +1,17 @@
+.header{
+    background-color: black;
+    color: white;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    height: 91px;
+}
+
+.logo{
+    position: absolute;
+    height: 50px;
+    left: 0;
+    top:0;
+}
