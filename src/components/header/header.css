@@ -13,5 +13,22 @@
     position: absolute;
     height: 50px;
     left: 0;
-    top:0;
+    top:17px;
+}
+
+ul  {
+    list-style-type: none;
+    top: 16px;
+    display: flex;
+    align-items: initial;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1270px;
+    margin-left: 169px;
+    margin-top: 29px;
+}
+
+li{
+    display: inline-block;
+    padding-right: 10%;
 }
