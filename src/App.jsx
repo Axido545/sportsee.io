@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react'
 import { getUser } from './services/api.js'
 import { User } from './models/user.js'
 import UserBanner from './components/userbanner/UserBanner.jsx'
+import Calories from './components/calories/Calories.jsx'
+import url1 from "./assets/calories-icon.png"
 
 
 function App() {
@@ -26,6 +28,7 @@ const [user,setUser] =useState()
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>
+    <Calories url={url1} number={user && user.calories} quantity='Kal'/>
     <Aside/>
 
     </div>
