@@ -1,0 +1,27 @@
+.user-banner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: first baseline;
+    position: absolute;
+    top :120px;
+    left:190px;
+    flex-direction: column;
+}
+
+.user-name {
+    color: #000;
+font-family: Roboto;
+font-size: 48px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; 
+}
+
+.user-firstname{
+    color: #FF0101;
+font-family: Roboto;
+font-size: 48px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; 
+}

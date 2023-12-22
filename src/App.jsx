@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { getUser } from './services/api.js'
 import { User } from './models/user.js'
+import UserBanner from './components/userbanner/UserBanner.jsx'
 
 
 function App() {
@@ -24,7 +25,7 @@ const [user,setUser] =useState()
   console.log(User)
   return<div>
     <Header/>
-    <p>{user && user.firstName}</p>
+    <UserBanner firstName={user && user.firstName}/>
     <Aside/>
 
     </div>
