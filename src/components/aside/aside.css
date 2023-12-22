@@ -11,8 +11,29 @@
 }
 
 .copyright{
-    color:white;
-    transform: rotate(45deg);
+    color: white;
+    transform: rotate(270deg);
     font-family: "roboto";
+    position: absolute;
+    top: 520px;
+    width: 162px;
+    height: 69px;
+  
 
+}
+
+.wrap-icon {
+    position: absolute;
+    margin: 0 auto;
+    top:50px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    padding: 27px;
+
+}
+
+.icon-style {
+    padding-bottom: 10px;
 }

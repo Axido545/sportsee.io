@@ -8,10 +8,10 @@ export default function Aside() {
     return<aside className="aside">
         <div className="wrap-aside">
         <div className="wrap-icon">
-            <img src={icon1} alt="icon1"/>
-            <img src={icon2} alt="icon2"/>
-            <img src={icon3} alt="icon3"/>
-            <img src={icon4} alt="icon4"/>
+            <img className="icon-style" src={icon1} alt="icon1"/>
+            <img className="icon-style"  src={icon2} alt="icon2"/>
+            <img className="icon-style"  src={icon3} alt="icon3"/>
+            <img className="icon-style"  src={icon4} alt="icon4"/>
         </div>
         <small className="copyright">Copiryght, SportSee 2020</small>0
         </div>
