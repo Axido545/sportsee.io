@@ -6,18 +6,26 @@ width: 258px;
 height: 124px;
 flex-shrink: 0; 
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-position: absolute;
-right: 29px;
-top: 243px;
+position: relative;
+/* right: 29px;
+top: 243px; */
+margin-bottom: 39px;
 
 }
 
 .calorie-icon {
     width: 60px;
 height: 60px; 
+margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  left: 47px;
+  top: 33px;
 }
 
 .number-calories{
@@ -34,11 +42,14 @@ position: absolute;
 }
 
 .block-number{
-    width: 60px;
-    height: 60px;
-    padding: 14px
-
+width: 60px;
+  height: 60px;
+  padding: 14px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
 }
+
 
 .calorie-name{
     color: #74798C;

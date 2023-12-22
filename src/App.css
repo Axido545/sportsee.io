@@ -8,3 +8,9 @@
 *{
   font-family: 'Roboto';
 }
+
+.calorie-dash{
+  position: absolute;
+  right: 5px;
+  top: 258px;
+}
