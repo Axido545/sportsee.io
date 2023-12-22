@@ -28,7 +28,7 @@ const [user,setUser] =useState()
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>
-    <Calories url={url1} number={user && user.calories} quantity='Kal'/>
+    <Calories url={url1} number={user && user.calories} quantity='Cal' name='Calories'/>
     <Aside/>
 
     </div>

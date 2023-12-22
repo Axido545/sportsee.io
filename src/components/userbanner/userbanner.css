@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Montserrat:wght@500;600&family=Roboto:wght@700&display=swap');
+
 .user-banner {
     display: flex;
     justify-content: flex-start;
@@ -18,10 +20,15 @@ line-height: 24px;
 }
 
 .user-firstname{
-    color: #FF0101;
+color: #FF0101;
 font-family: Roboto;
 font-size: 48px;
 font-style: normal;
-font-weight: 500;
+font-weight: 700;
 line-height: 24px; 
+}
+
+.calorie-icon{
+
+
 }
