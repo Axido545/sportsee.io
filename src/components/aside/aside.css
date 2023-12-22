@@ -1,0 +1,18 @@
+.aside{
+    background-color: black;
+    width: 117px;
+    height: 1270px;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    z-index: 0;
+}
+
+.copyright{
+    color:white;
+    transform: rotate(45deg);
+    font-family: "roboto";
+
+}
