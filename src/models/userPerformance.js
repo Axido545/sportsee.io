@@ -35,4 +35,3 @@ findValueByKind(data, kind) {
 }
 }
 
-}
