@@ -15,8 +15,8 @@ import url4 from "./assets/fat-icon.png"
 import { UserActivity } from './models/userActivity.js'
 import { UserAverageSessions } from './models/userAverageSessions.js'
 import { UserPerformance } from './models/userPerformance.js'
-
 import ActivityChart from "./charts/ActivityChart.jsx"
+
 
 
 
@@ -44,7 +44,10 @@ const [user,setUser] =useState()
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>
-    <ActivityChart className="activity-chart" session ={user && user.session}/>
+    <ActivityChart className="activity-chart"
+    //  session ={user && user.session}
+     
+     />
     <div className='calorie-dash'>
     <Calories url={url1} number={user && user.calories} quantity='Cal' name='Calories'/>
     <Calories url={url2} number={user && user.protein} quantity='g' name='Protéines'/>

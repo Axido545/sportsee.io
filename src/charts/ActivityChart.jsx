@@ -69,12 +69,11 @@ export default function ActivityChart(data) {
       }}
       radius={[20, 20, 0, 0]}
        maxBarSize={10}
-       background="#282D30"
     >
       <CartesianGrid strokeDasharray="1 1" />
-      <XAxis dataKey={data} />
-      <YAxis />
-      <Tooltip />
+      <XAxis dataKey="day" />
+      <YAxis domaine={[0,10]} type='numer'  />
+      <Tooltip  />
       <Legend />
       <Bar  fill="#282D30" />
       <Bar  fill="#FF0101" />
