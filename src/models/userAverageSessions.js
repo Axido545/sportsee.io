@@ -1,4 +1,4 @@
-export class getUserAverageSessions{
+export class UserAverageSessions{
     id;
     sessions;
 

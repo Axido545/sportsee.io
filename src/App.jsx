@@ -4,7 +4,7 @@ import Header from './components/header/Header.jsx'
 import Aside from './components/aside/Aside.jsx'
 import {useParams} from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { getUser,getUserActivity } from './services/api.js'
+import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from './services/api.js'
 import { User } from './models/user.js'
 import UserBanner from './components/userbanner/UserBanner.jsx'
 import Calories from './components/calories/Calories.jsx'
@@ -12,7 +12,10 @@ import url1 from "./assets/calories-icon.png"
 import url2 from "./assets/protein-icon.png"
 import url3 from "./assets/carbs-icon.png"
 import url4 from "./assets/fat-icon.png"
-import { userActivity } from './models/userActivity.js'
+import { UserActivity } from './models/userActivity.js'
+import { UserAverageSessions } from './models/userAverageSessions.js'
+import { UserPerformance } from './models/userPerformance.js'
+
 import ActivityChart from "./charts/ActivityChart.jsx"
 
 
@@ -25,16 +28,19 @@ const [user,setUser] =useState()
     async function getDatas(){
       const userDatas = await getUser(id)
       const userActivityDatas = await getUserActivity(id)
+      const userAverageSessionsData = await getUserAverageSessions(id)
+      const userPerformanceDatas = await getUserPerformance(id)
 
       const userModel = new User(userDatas)
-      const activityModel = new userActivity(userActivityDatas)
-  
-      setUser(userModel,activityModel)
+      const activityModel = new UserActivity(userActivityDatas)
+      const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
+      const performanceModel = new UserPerformance(userPerformanceDatas)
+
+      setUser(userModel,activityModel,averageSessionsModel,performanceModel)
     }
     getDatas()
   },[id])
   console.log(User)
-  console.log(userActivity)
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>

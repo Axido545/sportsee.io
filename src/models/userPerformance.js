@@ -1,4 +1,4 @@
-export class getUserPerformance {
+export class UserPerformance {
     id;
     kind;
     cardio;

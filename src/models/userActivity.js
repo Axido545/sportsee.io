@@ -1,4 +1,4 @@
-export class userActivity {
+export class UserActivity {
     id;
     session;
     day;
