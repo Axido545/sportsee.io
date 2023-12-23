@@ -44,18 +44,14 @@ const [user,setUser] =useState()
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>
-    <ActivityChart session ={user && user.session}/>
+    <ActivityChart className="activity-chart" session ={user && user.session}/>
     <div className='calorie-dash'>
     <Calories url={url1} number={user && user.calories} quantity='Cal' name='Calories'/>
     <Calories url={url2} number={user && user.protein} quantity='g' name='Protéines'/>
     <Calories url={url3} number={user && user.carbohydrate} quantity='g' name='Glucides'/>
     <Calories url={url4} number={user && user.lipid} quantity='g' name='Lipides'/>
     </div>
-  
-   
-
     <Aside/>
-
     </div>
 }
 

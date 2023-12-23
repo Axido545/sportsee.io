@@ -30,8 +30,12 @@ export class UserPerformance {
 }
 
 findValueByKind(data, kind) {
+    if (Array.isArray(data)) {
     const entry = data.find(item => item.kind === kind);
     return entry ? entry.value : null;
+} else {
+    return null;
+}
 }
 }
 
