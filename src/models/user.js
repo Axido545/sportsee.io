@@ -31,4 +31,5 @@ export class User {
             this.lipid =  '';
 }
 }
+
 }
