@@ -21,8 +21,3 @@ export class getUserAverageSessions{
         }));
     }
     }
-
-
-
-
-}
