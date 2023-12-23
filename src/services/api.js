@@ -11,7 +11,7 @@ export function getUserActivity(id){
 }
 
 export function getUserAverageSessions(id){
-    return fetch(`http://localhost:3000/user/${id}/average-session`)
+    return fetch(`http://localhost:3000/user/${id}/average-sessions`)
     .then(res => res.json())
 
 }
