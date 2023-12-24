@@ -1,19 +1,19 @@
 export class UserActivity {
     id;
-    session;
+    sessions;
     day;
     kilogram;
     calories;   
     constructor(getUseActivityData){
         if(getUseActivityData && getUseActivityData.data){
             this.id = getUseActivityData.data.userId || null;
-            this.session = getUseActivityData.data.sessions || '';
+            this.sessions = getUseActivityData.data.sessions || [];
             this.day = getUseActivityData.data.sessions.day || '';
             this.kilogram =  getUseActivityData.data.sessions.kilogram || '';
             this.calories = getUseActivityData.data.sessions.calories || '';
     } else {
         this.id = null;
-            this.session = '';
+            this.sessions = [];
             this.day = '';
             this.kilogram = '';
             this.calories =  '';
