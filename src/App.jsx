@@ -22,7 +22,12 @@ import ActivityChart from "./charts/ActivityChart.jsx"
 
 function App() {
   const {id} =useParams()
-const [user,setUser] =useState()
+const [user,setUser] =useState({
+  user: null,
+  activity: null,
+  averageSessions: null,
+  performance: null,
+})
 
   useEffect(()=>{
     async function getDatas(){
@@ -36,18 +41,19 @@ const [user,setUser] =useState()
       const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
       const performanceModel = new UserPerformance(userPerformanceDatas)
 
-      setUser(userModel,activityModel,averageSessionsModel,performanceModel)
+      setUser({
+        user: userModel,
+        activity: activityModel,
+        averageSessions: averageSessionsModel,
+        performance: performanceModel,
+      })
     }
     getDatas()
   },[id])
-  console.log(User)
   return<div>
     <Header/>
     <UserBanner firstName={user && user.firstName}/>
-    <ActivityChart className="activity-chart"
-    //  session ={user && user.session}
-     
-     />
+    <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions}/>
     <div className='calorie-dash'>
     <Calories url={url1} number={user && user.calories} quantity='Cal' name='Calories'/>
     <Calories url={url2} number={user && user.protein} quantity='g' name='Protéines'/>
