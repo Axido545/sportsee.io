@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 export default function ActivityChart({sessions}) {
-
+  console.log("Sessions:", sessions);
 
   return (
     <BarChart
