@@ -3,7 +3,8 @@ export class UserActivity {
     sessions;
     day;
     kilogram;
-    calories;   
+    calories;
+    index;   
     constructor(getUseActivityData){
         if(getUseActivityData && getUseActivityData.data){
             this.id = getUseActivityData.data.userId || null;
@@ -11,12 +12,14 @@ export class UserActivity {
             this.day = getUseActivityData.data.sessions.day || '';
             this.kilogram =  getUseActivityData.data.sessions.kilogram || '';
             this.calories = getUseActivityData.data.sessions.calories || '';
+            this.index = getUseActivityData.data.sessions.map((session, index) => Number(index));
     } else {
         this.id = null;
             this.sessions = [];
             this.day = '';
             this.kilogram = '';
             this.calories =  '';
+            this.index = [];
 }
 }
 }
