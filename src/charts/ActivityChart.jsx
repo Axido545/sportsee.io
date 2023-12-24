@@ -12,6 +12,7 @@ export default function ActivityChart({sessions}) {
   console.log("Sessions:", sessions);
 
   return (
+    <div style={{ position: 'relative', top: '200px', left: '-229px' }}>
     <BarChart
       width={835}
       height={320}
@@ -24,6 +25,9 @@ export default function ActivityChart({sessions}) {
       }}
       radius={[20, 20, 0, 0]}
        maxBarSize={10}
+       top={200}
+       position="absolute"
+       left={-229}
     >
       <CartesianGrid strokeDasharray="1 1" />
       <XAxis dataKey="day" />
@@ -33,5 +37,6 @@ export default function ActivityChart({sessions}) {
       <Bar dataKey="kilogram" fill="#282D30" />
       <Bar dataKey="calories"  fill="#FF0101" />
     </BarChart>
+    </div>
   );
 }
