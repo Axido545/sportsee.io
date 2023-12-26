@@ -15,10 +15,10 @@ import url4 from "../../assets/fat-icon.png"
 import { UserActivity } from '../../models/userActivity.js'
 import { UserAverageSessions } from '../../models/userAverageSessions.js'
 import { UserPerformance } from '../../models/userPerformance.js'
-import ActivityChart from "../../charts/ActivityChart.jsx"
-import RadialScoreChart from '../../charts/RadialScoreChart.jsx'
+import ActivityChart from "../../charts/activitychart/ActivityChart.jsx"
+import ScoreChart from '../../charts/scorechart/ScoreChart.jsx'
 import SessionsAverageChart from '../../charts/SessionsAverageChart.jsx'
-import PerformanceChart from '../../charts/PerformanceChart.jsx'
+import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx'
 
 
 
@@ -67,7 +67,7 @@ const [user,setUser] =useState({
     <Aside/>
     <SessionsAverageChart/>
     <PerformanceChart/>
-    <RadialScoreChart
+    <ScoreChart
     score={user && user.user && user.user.score}
     /><p>{user && user.user && user.user.score}</p>
 
