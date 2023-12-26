@@ -34,6 +34,9 @@ const [user,setUser] =useState({
 })
 
   useEffect(()=>{
+    if (id && (id !== '18' && id !== '12')) {
+      navigate('/page-non-trouvée')
+    }
     async function getDatas(){
       const userDatas = await getUser(id)
       const userActivityDatas = await getUserActivity(id)
@@ -44,9 +47,7 @@ const [user,setUser] =useState({
       const activityModel = new UserActivity(userActivityDatas)
       const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
       const performanceModel = new UserPerformance(userPerformanceDatas)
-      if (id != 18 || id!= 12) {
-        navigate('/page-non-trouvée')
-      }
+
       setUser({
         user: userModel,
         activity: activityModel,
