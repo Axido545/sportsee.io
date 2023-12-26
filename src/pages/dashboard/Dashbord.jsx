@@ -1,29 +1,29 @@
 
-import './dashboard.css'
-import Header from '../components/header/Header.jsx'
-import Aside from '../components/aside/Aside.jsx'
+import "./dashbord.css"
+import Header from '../../components/header/Header.jsx'
+import Aside from '../../components/aside/Aside.jsx'
 import {useParams} from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../services/api.js'
-import { User } from '../models/user.js'
-import UserBanner from '../components/userbanner/UserBanner.jsx'
-import Calories from '../components/calories/Calories.jsx'
-import url1 from "./assets/calories-icon.png"
-import url2 from "./assets/protein-icon.png"
-import url3 from "./assets/carbs-icon.png"
-import url4 from "./assets/fat-icon.png"
-import { UserActivity } from '../models/userActivity.js'
-import { UserAverageSessions } from '../models/userAverageSessions.js'
-import { UserPerformance } from '../models/userPerformance.js'
-import ActivityChart from "../charts/ActivityChart.jsx"
-import RadialScoreChart from '../charts/RadialScoreChart.jsx'
-import SessionsAverageChart from '../charts/SessionsAverageChart.jsx'
-import PerformanceChart from '../charts/PerformanceChart.jsx'
+import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
+import { User } from '../../models/user.js'
+import UserBanner from '../../components/userbanner/UserBanner.jsx'
+import Calories from '../../components/calories/Calories.jsx'
+import url1 from "../../assets/calories-icon.png"
+import url2 from "../../assets/protein-icon.png"
+import url3 from "../../assets/carbs-icon.png"
+import url4 from "../../assets/fat-icon.png"
+import { UserActivity } from '../../models/userActivity.js'
+import { UserAverageSessions } from '../../models/userAverageSessions.js'
+import { UserPerformance } from '../../models/userPerformance.js'
+import ActivityChart from "../../charts/ActivityChart.jsx"
+import RadialScoreChart from '../../charts/RadialScoreChart.jsx'
+import SessionsAverageChart from '../../charts/SessionsAverageChart.jsx'
+import PerformanceChart from '../../charts/PerformanceChart.jsx'
 
 
 
 
-function App() {
+export default function Dashboard() {
   const {id} =useParams()
 const [user,setUser] =useState({
   user: null,
@@ -74,4 +74,3 @@ const [user,setUser] =useState({
     </div>
 }
 
-export default App
