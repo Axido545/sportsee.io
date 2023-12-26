@@ -1,22 +1,24 @@
 
-import './App.css'
-import Header from './components/header/Header.jsx'
-import Aside from './components/aside/Aside.jsx'
+import './dashboard.css'
+import Header from '../components/header/Header.jsx'
+import Aside from '../components/aside/Aside.jsx'
 import {useParams} from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from './services/api.js'
-import { User } from './models/user.js'
-import UserBanner from './components/userbanner/UserBanner.jsx'
-import Calories from './components/calories/Calories.jsx'
+import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../services/api.js'
+import { User } from '../models/user.js'
+import UserBanner from '../components/userbanner/UserBanner.jsx'
+import Calories from '../components/calories/Calories.jsx'
 import url1 from "./assets/calories-icon.png"
 import url2 from "./assets/protein-icon.png"
 import url3 from "./assets/carbs-icon.png"
 import url4 from "./assets/fat-icon.png"
-import { UserActivity } from './models/userActivity.js'
-import { UserAverageSessions } from './models/userAverageSessions.js'
-import { UserPerformance } from './models/userPerformance.js'
-import ActivityChart from "./charts/ActivityChart.jsx"
-import RadialScoreChart from './charts/RadialScoreChart.jsx'
+import { UserActivity } from '../models/userActivity.js'
+import { UserAverageSessions } from '../models/userAverageSessions.js'
+import { UserPerformance } from '../models/userPerformance.js'
+import ActivityChart from "../charts/ActivityChart.jsx"
+import RadialScoreChart from '../charts/RadialScoreChart.jsx'
+import SessionsAverageChart from '../charts/SessionsAverageChart.jsx'
+import PerformanceChart from '../charts/PerformanceChart.jsx'
 
 
 
@@ -63,8 +65,10 @@ const [user,setUser] =useState({
     <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides'/>
     </div>
     <Aside/>
-    <RadialScoreChart 
-    data={user && user.user && user.user.score}
+    <SessionsAverageChart/>
+    <PerformanceChart/>
+    <RadialScoreChart
+    score={user && user.user && user.user.score}
     /><p>{user && user.user && user.user.score}</p>
 
     </div>
