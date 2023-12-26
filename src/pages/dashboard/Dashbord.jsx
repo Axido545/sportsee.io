@@ -2,7 +2,7 @@
 import "./dashbord.css"
 import Header from '../../components/header/Header.jsx'
 import Aside from '../../components/aside/Aside.jsx'
-import {useParams} from "react-router-dom"
+import {useParams, useNavigate} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
 import { User } from '../../models/user.js'
@@ -25,6 +25,7 @@ import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx
 
 export default function Dashboard() {
   const {id} =useParams()
+  const navigate = useNavigate()
 const [user,setUser] =useState({
   user: null,
   activity: null,
@@ -43,7 +44,9 @@ const [user,setUser] =useState({
       const activityModel = new UserActivity(userActivityDatas)
       const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
       const performanceModel = new UserPerformance(userPerformanceDatas)
-
+      if (id != 18 || id!= 12) {
+        navigate('/page-non-trouvée')
+      }
       setUser({
         user: userModel,
         activity: activityModel,
