@@ -16,6 +16,7 @@ import { UserActivity } from './models/userActivity.js'
 import { UserAverageSessions } from './models/userAverageSessions.js'
 import { UserPerformance } from './models/userPerformance.js'
 import ActivityChart from "./charts/ActivityChart.jsx"
+import RadialScoreChart from './charts/RadialScoreChart.jsx'
 
 
 
@@ -62,6 +63,10 @@ const [user,setUser] =useState({
     <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides'/>
     </div>
     <Aside/>
+    <RadialScoreChart 
+    data={user && user.user && user.user.score}
+    /><p>{user && user.user && user.user.score}</p>
+
     </div>
 }
 

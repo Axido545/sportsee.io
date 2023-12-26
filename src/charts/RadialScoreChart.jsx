@@ -1,75 +1,62 @@
-import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart,RadialBar,Legend, PolarAngleAxis } from 'recharts';
 
-const data = [
-  {
-    name: '18-24',
-    uv: 31.47,
-    pv: 2400,
-    fill: '#8884d8',
-  },
-  {
-    name: '25-29',
-    uv: 26.69,
-    pv: 4567,
-    fill: '#83a6ed',
-  },
-  {
-    name: '30-34',
-    uv: 15.69,
-    pv: 1398,
-    fill: '#8dd1e1',
-  },
-  {
-    name: '35-39',
-    uv: 8.22,
-    pv: 9800,
-    fill: '#82ca9d',
-  },
-  {
-    name: '40-49',
-    uv: 8.63,
-    pv: 3908,
-    fill: '#a4de6c',
-  },
-  {
-    name: '50+',
-    uv: 2.63,
-    pv: 4800,
-    fill: '#d0ed57',
-  },
-  {
-    name: 'unknow',
-    uv: 6.67,
-    pv: 4800,
-    fill: '#ffc658',
-  },
-];
 
-const style = {
-  top: '50%',
-  right: 0,
-  transform: 'translate(0, -50%)',
-  lineHeight: '24px',
-};
 
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-radial-bar-chart-qf8fz';
-
-  render() {
-    return (
-      <ResponsiveContainer width="100%" height="100%">
-        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
+export default function RadialScoreChart({data}){
+  return<div 
+  style={{zIndex : "10", color : 'black', position : "absolute", top :'700px', backgroundColor :'#FBFBFB'}}
+  ><p>Score{data}</p>
+          {/* <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
           <RadialBar
             minAngle={15}
             label={{ position: 'insideStart', fill: '#fff' }}
             background
             clockWise
-            dataKey="uv"
+            dataKey={data}
           />
-          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={style} />
-        </RadialBarChart>
-      </ResponsiveContainer>
-    );
-  }
+          <Legend iconSize={10} layout="vertical" verticalAlign="middle" wrapperStyle={{backgroundColor : 'red'}} />
+        </RadialBarChart> */}
+     <RadialBarChart width={143} height={143} data={data}
+    // cx={30 / 2}
+    // cy={30 / 2}
+    innerRadius={25}
+    // outerRadius={18}
+    barSize={4}
+    startAngle={90}
+    endAngle={-270}>
+      <PolarAngleAxis
+        type="number"
+        domain={[0, 10]}
+        angleAxisId={0}
+        tick={false}
+      />
+      <RadialBar
+        background
+        dataKey="value"
+        cornerRadius={30 / 2}
+        fill="#0BEFF2"
+      />
+      <text
+        x={30 / 2}
+        y={33 / 2}
+        textAnchor="middle"
+        dominantBaseline="middle"
+        className="progress-label"
+      >
+        89
+      </text>
+    </RadialBarChart>
+    
+    {/* <RadialBarChart
+  cx='50%'
+  cy='50%'
+  innerRadius='10%'
+  outerRadius='80%'
+  barSize={10}
+  startAngle={180} 
+  endAngle={0}
+  data={data}
+></RadialBarChart> */}
+    </div>
 }
+
