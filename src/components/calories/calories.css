@@ -1,25 +1,25 @@
-.calories-block{
-    border-radius: 5px;
-background: #FBFBFB;
-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
-width: 258px;
-height: 124px;
-flex-shrink: 0; 
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-position: relative;
-/* right: 29px;
+.calories-block {
+  border-radius: 5px;
+  background: #FBFBFB;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+  width: 258px;
+  height: 124px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* right: 29px;
 top: 243px; */
-margin-bottom: 39px;
+  margin-bottom: 39px;
 
 }
 
 .calorie-icon {
-    width: 60px;
-height: 60px; 
-margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -28,21 +28,22 @@ margin: 0 auto;
   top: 33px;
 }
 
-.number-calories{
-    color: #282D30;
-font-family: Roboto;
-font-size: 20px;
-font-style: normal;
-font-weight: bold;
-line-height: 24px; /* 120% */ 
-position: absolute;
+.number-calories {
+  color: #282D30;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+  /* 120% */
+  position: absolute;
   top: 35px;
   left: 124px;
 
 }
 
-.block-number{
-width: 60px;
+.block-number {
+  width: 60px;
   height: 60px;
   padding: 14px;
   position: absolute;
@@ -51,14 +52,14 @@ width: 60px;
 }
 
 
-.calorie-name{
-    color: #74798C;
-font-family: Roboto;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: 0;
-position: absolute;
+.calorie-name {
+  color: #74798C;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0;
+  position: absolute;
   left: 124px;
   top: 55px;
 }

@@ -11,11 +11,12 @@ const router = createBrowserRouter([
   {
     path: '/user/:id',
     element: <Dashboard />,
-    errorElement: <Error />,  },
-    {
-      path: '*',
-      element: <Error />,
-    },
+    errorElement: <Error />,
+  },
+  {
+    path: '*',
+    element: <Error />,
+  },
 ])
 
 

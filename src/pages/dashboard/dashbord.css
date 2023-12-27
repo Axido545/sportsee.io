@@ -5,17 +5,17 @@
   text-align: center;
 }
 
-*{
+* {
   font-family: 'Roboto';
 }
 
-.calorie-dash{
+.calorie-dash {
   position: absolute;
   right: 15px;
-  top: 304px;
+  top: 250px;
 }
 
-.activity-chart{
+.activity-chart {
   background-color: #FBFBFB;
   position: absolute;
 

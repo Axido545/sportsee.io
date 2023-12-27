@@ -1,17 +1,17 @@
-export class UserAverageSessions{
+export class UserAverageSessions {
     id;
     sessions;
 
-    constructor(getUserAverageSessions){
-        if(getUserAverageSessions && getUserAverageSessions.sessions) {
+    constructor(getUserAverageSessions) {
+        if (getUserAverageSessions && getUserAverageSessions.sessions) {
             this.id = getUserAverageSessions.userId;
             this.sessions = this.processSessions(getUserAverageSessions.sessions)
-        }else {
+        } else {
             this.id = null;
             this.sessions = [];
         }
     }
-    processSessions(sessionsData){
+    processSessions(sessionsData) {
         if (!sessionsData || !Array.isArray(sessionsData)) {
             return [];
         }
@@ -20,4 +20,4 @@ export class UserAverageSessions{
             sessionLength: session.sessionLength || 0,
         }));
     }
-    }
+}

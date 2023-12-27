@@ -2,9 +2,9 @@
 import "./dashbord.css"
 import Header from '../../layout/header/Header.jsx'
 import Aside from '../../layout/aside/Aside.jsx'
-import {useParams, useNavigate} from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from 'react'
-import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
+import { getUser, getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
 import { User } from '../../models/user.js'
 import UserBanner from '../../components/userbanner/UserBanner.jsx'
 import Calories from '../../components/calories/Calories.jsx'
@@ -20,24 +20,21 @@ import ScoreChart from '../../charts/scorechart/ScoreChart.jsx'
 import SessionsAverageChart from '../../charts/sessionschart/SessionsAverageChart.jsx'
 import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx'
 
-
-
-
 export default function Dashboard() {
-  const {id} =useParams()
+  const { id } = useParams()
   const navigate = useNavigate()
-const [user,setUser] =useState({
-  user: null,
-  activity: null,
-  averageSessions: null,
-  performance: null,
-})
+  const [user, setUser] = useState({
+    user: null,
+    activity: null,
+    averageSessions: null,
+    performance: null,
+  })
 
-  useEffect(()=>{
+  useEffect(() => {
     if (id && (id !== '18' && id !== '12')) {
       navigate('/page-non-trouvée')
     }
-    async function getDatas(){
+    async function getDatas() {
       const userDatas = await getUser(id)
       const userActivityDatas = await getUserActivity(id)
       const userAverageSessionsData = await getUserAverageSessions(id)
@@ -56,25 +53,25 @@ const [user,setUser] =useState({
       })
     }
     getDatas()
-  },[id])
+  }, [id])
   console.log(user)
-  return<div>
-    <Header/>
-    <UserBanner firstName={user && user.user && user.user.firstName}/>
-    <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions}/>
+  return <div>
+    <Header />
+    <UserBanner firstName={user && user.user && user.user.firstName} />
+    <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions} />
     <div className='calorie-dash'>
-    <Calories url={url1} number={user && user.user && user.user.calories} quantity='Cal' name='Calories'/>
-    <Calories url={url2} number={user &&  user.user && user.user.protein} quantity='g' name='Protéines'/>
-    <Calories url={url3} number={user &&  user.user && user.user.carbohydrate} quantity='g' name='Glucides'/>
-    <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides'/>
+      <Calories url={url1} number={user && user.user && user.user.calories} quantity='Cal' name='Calories' />
+      <Calories url={url2} number={user && user.user && user.user.protein} quantity='g' name='Protéines' />
+      <Calories url={url3} number={user && user.user && user.user.carbohydrate} quantity='g' name='Glucides' />
+      <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides' />
     </div>
-    <Aside/>
+    <Aside />
     <SessionsAverageChart data={user && user.averageSessions && user.averageSessions.sessions} />
-    <PerformanceChart/>
+    <PerformanceChart />
     <ScoreChart
-    score={user && user.user && user.user.score}
+      score={user && user.user && user.user.score}
     /><p>{user && user.user && user.user.score}</p>
 
-    </div>
+  </div>
 }
 

@@ -1,3 +1,3 @@
-export default function Error (){
-    return<p>Page introuvable</p>
+export default function Error() {
+    return <p>Page introuvable</p>
 }

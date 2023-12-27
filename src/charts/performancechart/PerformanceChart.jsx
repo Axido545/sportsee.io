@@ -1,3 +1,3 @@
-export default function performanceChart(){
-    return<p>Performance</p>
+export default function performanceChart() {
+    return <p>Performance</p>
 }

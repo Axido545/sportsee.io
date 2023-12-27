@@ -1,4 +1,4 @@
-.aside{
+.aside {
     background-color: black;
     width: 117px;
     height: 1270px;
@@ -10,7 +10,7 @@
     z-index: 0;
 }
 
-.copyright{
+.copyright {
     color: white;
     transform: rotate(270deg);
     font-family: "roboto";
@@ -18,14 +18,14 @@
     top: 520px;
     width: 162px;
     height: 69px;
-  
+
 
 }
 
 .wrap-icon {
     position: absolute;
     margin: 0 auto;
-    top:50px;
+    top: 50px;
     display: flex;
     flex-direction: column;
     align-content: center;
