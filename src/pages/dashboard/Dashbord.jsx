@@ -1,7 +1,7 @@
 
 import "./dashbord.css"
-import Header from '../../components/header/Header.jsx'
-import Aside from '../../components/aside/Aside.jsx'
+import Header from '../../layout/header/Header.jsx'
+import Aside from '../../layout/aside/Aside.jsx'
 import {useParams, useNavigate} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { getUser,getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
