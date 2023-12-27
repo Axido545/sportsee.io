@@ -31,30 +31,35 @@ export default function Dashboard() {
   })
 
   useEffect(() => {
-    if (id && (id !== '18' && id !== '12')) {
-      navigate('/page-non-trouvée')
-    }
     async function getDatas() {
-      const userDatas = await getUser(id)
-      const userActivityDatas = await getUserActivity(id)
-      const userAverageSessionsData = await getUserAverageSessions(id)
-      const userPerformanceDatas = await getUserPerformance(id)
+      try {
+        const userDatas = await getUser(id)
+        const userActivityDatas = await getUserActivity(id)
+        const userAverageSessionsData = await getUserAverageSessions(id)
+        const userPerformanceDatas = await getUserPerformance(id)
+        const userModel = new User(userDatas)
 
-      const userModel = new User(userDatas)
-      const activityModel = new UserActivity(userActivityDatas)
-      const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
-      const performanceModel = new UserPerformance(userPerformanceDatas)
+        const activityModel = new UserActivity(userActivityDatas)
+        console.log('Before creating UserAverageSessions instance');
+        const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
+        console.log('After creating UserAverageSessions instance');
+        console.log('averageSessionsModel', averageSessionsModel.sessions);
+        const performanceModel = new UserPerformance(userPerformanceDatas)
 
-      setUser({
-        user: userModel,
-        activity: activityModel,
-        averageSessions: averageSessionsModel,
-        performance: performanceModel,
-      })
+        setUser({
+          user: userModel,
+          activity: activityModel,
+          averageSessions: averageSessionsModel,
+          performance: performanceModel,
+        })
+      } catch (error) {
+        return navigate('/page-non-trouvée')
+      }
     }
     getDatas()
   }, [id])
-  console.log(user)
+  console.log(user && user.averageSessions && user.averageSessions.sessions);
+
   return <div>
     <Header />
     <UserBanner firstName={user && user.user && user.user.firstName} />
@@ -66,7 +71,7 @@ export default function Dashboard() {
       <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides' />
     </div>
     <Aside />
-    <SessionsAverageChart data={user && user.averageSessions && user.averageSessions.sessions} />
+    <SessionsAverageChart sessions={user && user.averageSessions && user.averageSessions.sessions} />
     <PerformanceChart />
     <ScoreChart
       score={user && user.user && user.user.score}

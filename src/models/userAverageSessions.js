@@ -12,12 +12,18 @@ export class UserAverageSessions {
         }
     }
     processSessions(sessionsData) {
+        console.log('Processing sessionsData:', sessionsData);
+
         if (!sessionsData || !Array.isArray(sessionsData)) {
+            console.log('Empty or non-array sessionsData');
             return [];
         }
-        return sessionsData.map(session => ({
+        const processedSessions = sessionsData.map(session => ({
             day: session.day || null,
             sessionLength: session.sessionLength || 0,
         }));
+        console.log('Processed sessions:', processedSessions);
+        return processedSessions;
     }
+
 }

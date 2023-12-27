@@ -1,3 +1,5 @@
+import { LineChart, XAxis, YAxis } from "recharts";
+
 export default function performanceChart() {
-    return <p>Performance</p>
+    return <p>performance</p>
 }
