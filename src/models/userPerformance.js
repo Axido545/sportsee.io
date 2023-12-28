@@ -10,7 +10,7 @@ export class UserPerformance {
             this.subjects = this.mapSubjects(getUserPerformanceData.data.data, getUserPerformanceData.data.kind) || [];
         } else {
             this.id = null;
-            this.subject = []
+            this.subjects = []
         }
         console.log('ID:', this.id);
         console.log('Subjects:', this.subjects);
