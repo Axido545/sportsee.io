@@ -9,22 +9,17 @@ export class User {
     carbohydrate;
     lipid
     constructor(getUserData) {
-        // console.log('Raw data:', getUserData);
         if (getUserData && getUserData.data) {
             this.id = getUserData.data.userId || null;
             this.firstName = getUserData.data.userInfos.firstName || '';
             this.lastName = getUserData.data.userInfos.lastName || '';
             this.age = getUserData.data.userInfos.age || ''
-
-
             // opérateur ternaire pour vérifier chaque propriété de score
             this.score = {
                 value:
                     getUserData.data.score !== undefined ? formatScore(getUserData.data.score) :
                         getUserData.data.todayScore !== undefined ? formatScore(getUserData.data.todayScore) : ''
             };
-
-            // this.score = { value: getUserData.data.score } || { value: getUserData.data.todayScore } || { value: '' };
             this.calories = getUserData.data.keyData.calorieCount || '';
             this.protein = getUserData.data.keyData.proteinCount || '';
             this.carbohydrate = getUserData.data.keyData.proteinCount || '';
@@ -40,9 +35,6 @@ export class User {
             this.carbohydrate = '';
             this.lipid = '';
         }
-        // console.log('ScoreA:', this.scoreA);
-        // console.log('Type of Score:', typeof getUserData.data.userInfos.score);
-        // console.log('Type of Today Score:', typeof getUserData.data.userInfos.todayScore);
     }
 }
 // Fonction pour formater le score
