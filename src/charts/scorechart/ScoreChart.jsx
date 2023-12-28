@@ -9,13 +9,14 @@ export default function ScoreChart({ score }) {
     return <div>Score non disponible</div>;
   }
   return <div className="score-chart"
-  // style={{ zIndex: "10", color: 'black', position: "absolute", top: '500px', backgroundColor: '#FBFBFB' }}
-  ><p>Score</p>
-    <RadialBarChart width={200} height={200} cx={100} cy={120} innerRadius={60} outerRadius={80} barSize={10} data={[score]} startAngle={60} endAngle={216}>
-      <RadialBar dataKey="value" fill="#FF0000" radius={10} />
-      <Legend iconSize={10} width={120} height={140} layout="vertical" verticalAlign="middle" align="right" />
+  ><div className='chart-name'>Score</div>
+    <p className='score-title'><span className='score-value'>{score.value}%</span> de votre objectif</p>
+
+    <RadialBarChart style={{ borderRadius: '15px' }}
+      width={160} cornerRadius="50%" radius={30} height={150} cx={103} cy={90} zIndex={10} Position="absolute" innerRadius={50} outerRadius={110} barSize={10} data={[score]} startAngle={60} endAngle={score.value + 150}>
+      <RadialBar dataKey="value" fill="#FF0000" cornerRadius="100%" background={{ fill: '#FF0000', cornerRadius: "50%" }}
+      />
     </RadialBarChart>
-    <p className='score-title'>{score.value}%<br /> de votre objectif</p>
-  </div>
+  </div >
 }
 

@@ -37,9 +37,7 @@ export default function Dashboard() {
     async function getDatas() {
       try {
         //data
-        console.log("avant le fetch user data");
         const userDatas = await getUser(id)
-        console.log("Après le fetch user data");
         const userActivityDatas = await getUserActivity(id)
         const userAverageSessionsData = await getUserAverageSessions(id)
         const userPerformanceDatas = await getUserPerformance(id)
@@ -49,7 +47,8 @@ export default function Dashboard() {
         const activityModel = new UserActivity(userActivityDatas)
         const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
         const performanceModel = new UserPerformance(userPerformanceDatas)
-        console.log('performanceModel', performanceModel);
+
+
 
         setUser({
           user: userModel,

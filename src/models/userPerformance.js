@@ -3,7 +3,6 @@ export class UserPerformance {
     subject;
 
     constructor(getUserPerformanceData) {
-        console.log('data brute:', getUserPerformanceData);
 
         if (getUserPerformanceData && getUserPerformanceData.data) {
             this.id = getUserPerformanceData.data.userId || null;
@@ -17,14 +16,20 @@ export class UserPerformance {
     }
     mapSubjects(data, kind) {
         if (data && Array.isArray(data) && kind && typeof kind === 'object') {
-            return data.map(item => ({
-                subject: kind[item.kind],
-                key: item.kind || null,
-                fullMark: item.value || null,
-            }));
+            return data.map(item => ([
+                kind[item.kind],
+                item.kind || null,
+                item.value || null,
+            ]));
+            // return data.map(item => ({
+            //     subject: kind[item.kind],
+            //     key: item.kind || null,
+            //     fullMark: item.value || null,
+            // }));
         } else {
             console.error('Error: Data.data is not an array');
             return [];
         }
+
     }
 }

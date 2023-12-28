@@ -2,8 +2,38 @@
     display: flex;
     position: relative;
     right: -515px;
-    top: -804px;
+    top: -772px;
     width: 200px;
     height: 200px;
     background-color: #fbfbfb;
+}
+
+.score-title {
+    background-color: white;
+    position: absolute;
+    margin: 0 auto;
+    border-radius: 100%;
+    width: 97px;
+    height: 97px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    top: 47px;
+    left: 55px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-name {
+    height: 10px;
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    font-weight: bolder;
+}
+
+.score-value {
+    font-weight: bolder;
+    font-size: 20px;
 }
