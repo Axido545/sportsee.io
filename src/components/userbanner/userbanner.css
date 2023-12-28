@@ -4,9 +4,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: first baseline;
-    position: absolute;
-    top: 120px;
-    left: 190px;
+    position: relative;
+    top: 60px;
+    left: 118px;
     flex-direction: column;
 }
 
