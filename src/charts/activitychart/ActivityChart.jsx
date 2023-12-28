@@ -7,20 +7,14 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import "./activitychart.css"
 
 export default function ActivityChart({ sessions }) {
   console.log("Sessions:", sessions);
 
   return (
-    <div style={{
-      backgroundColor: '#FBFBFB',
-      borderRadius: '5px',
-      boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.02)',
-      padding: '2px',
-      position: 'relative',
-      top: '80px',
-      left: '-55px'
-    }}>
+    <div className="wrap-activitychart"
+    >
       <p style={{
         fontSize: "11px",
         top: '-10px',
@@ -29,8 +23,8 @@ export default function ActivityChart({ sessions }) {
         fontWeight: 'bold'
       }}>Activité quotidienne</p>
       <BarChart
-        width={561}
-        height={320}
+        width={630}
+        height={280}
         data={sessions}
         margin={{
           top: 5,
@@ -41,7 +35,7 @@ export default function ActivityChart({ sessions }) {
         radius={[20, 20, 0, 0]}
         maxBarSize={10}
         top={200}
-        position="absolute"
+        position="relative"
         left={-229}
       >
         <CartesianGrid strokeDasharray="1 1" />
