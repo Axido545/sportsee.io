@@ -2,7 +2,10 @@
 import "./dashbord.css"
 import Header from '../../layout/header/Header.jsx'
 import Aside from '../../layout/aside/Aside.jsx'
-import { useParams, useNavigate } from "react-router-dom"
+import {
+  useParams,
+  // useNavigate 
+} from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { getUser, getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
 import { User } from '../../models/user.js'
@@ -22,7 +25,7 @@ import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx
 
 export default function Dashboard() {
   const { id } = useParams()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const [user, setUser] = useState({
     user: null,
     activity: null,
@@ -33,18 +36,20 @@ export default function Dashboard() {
   useEffect(() => {
     async function getDatas() {
       try {
+        //data
+        console.log("avant le fetch user data");
         const userDatas = await getUser(id)
+        console.log("Après le fetch user data");
         const userActivityDatas = await getUserActivity(id)
         const userAverageSessionsData = await getUserAverageSessions(id)
         const userPerformanceDatas = await getUserPerformance(id)
-        const userModel = new User(userDatas)
 
+        //models
+        const userModel = new User(userDatas)
         const activityModel = new UserActivity(userActivityDatas)
-        console.log('Before creating UserAverageSessions instance');
         const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
-        console.log('After creating UserAverageSessions instance');
-        console.log('averageSessionsModel', averageSessionsModel.sessions);
         const performanceModel = new UserPerformance(userPerformanceDatas)
+        console.log('performanceModel', performanceModel);
 
         setUser({
           user: userModel,
@@ -53,13 +58,14 @@ export default function Dashboard() {
           performance: performanceModel,
         })
       } catch (error) {
-        return navigate('/page-non-trouvée')
+        console.error("Error:", error);
+
+        // navigate('/page-not-found')
       }
     }
     getDatas()
   }, [id])
-  console.log('user.user.score', user && user.user && user.user.score);
-  console.log('user.user.score', user && user.user && user.user.firstName);
+
 
   return <>
     <Header />

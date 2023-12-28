@@ -9,7 +9,7 @@ export class User {
     carbohydrate;
     lipid
     constructor(getUserData) {
-        console.log('Raw data:', getUserData);
+        // console.log('Raw data:', getUserData);
         if (getUserData && getUserData.data) {
             this.id = getUserData.data.userId || null;
             this.firstName = getUserData.data.userInfos.firstName || '';
@@ -17,12 +17,11 @@ export class User {
             this.age = getUserData.data.userInfos.age || ''
 
 
-            // Utilisez l'opérateur ternaire pour vérifier chaque propriété de score
+            // opérateur ternaire pour vérifier chaque propriété de score
             this.score = {
                 value:
                     getUserData.data.score !== undefined ? formatScore(getUserData.data.score) :
-                        getUserData.data.todayScore !== undefined ? formatScore(getUserData.data.todayScore) :
-                            ''
+                        getUserData.data.todayScore !== undefined ? formatScore(getUserData.data.todayScore) : ''
             };
 
             // this.score = { value: getUserData.data.score } || { value: getUserData.data.todayScore } || { value: '' };
@@ -41,9 +40,9 @@ export class User {
             this.carbohydrate = '';
             this.lipid = '';
         }
-        console.log('ScoreA:', this.scoreA);
-        console.log('Type of Score:', typeof getUserData.data.userInfos.score);
-        console.log('Type of Today Score:', typeof getUserData.data.userInfos.todayScore);
+        // console.log('ScoreA:', this.scoreA);
+        // console.log('Type of Score:', typeof getUserData.data.userInfos.score);
+        // console.log('Type of Today Score:', typeof getUserData.data.userInfos.todayScore);
     }
 }
 // Fonction pour formater le score

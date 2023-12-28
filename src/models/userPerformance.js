@@ -1,38 +1,30 @@
 export class UserPerformance {
     id;
-    kind;
-    cardio;
-    energy;
-    endurance;
-    strength;
-    speed;
-    intensity;
+    subject;
 
     constructor(getUserPerformanceData) {
+        console.log('data brute:', getUserPerformanceData);
+
         if (getUserPerformanceData && getUserPerformanceData.data) {
             this.id = getUserPerformanceData.data.userId || null;
-            this.kind = getUserPerformanceData.data.kind || '';
-            this.cardio = this.findValueByKind(getUserPerformanceData.data, 'cardio') || '';
-            this.energy = this.findValueByKind(getUserPerformanceData.data, 'energy') || '';
-            this.endurance = this.findValueByKind(getUserPerformanceData.data, 'endurance') || '';
-            this.strength = this.findValueByKind(getUserPerformanceData.data, 'strength') || '';
-            this.speed = this.findValueByKind(getUserPerformanceData.data, 'speed') || '';
-            this.intensity = this.findValueByKind(getUserPerformanceData.data, 'intensity') || '';
+            this.subjects = this.mapSubjects(getUserPerformanceData.data.data, getUserPerformanceData.data.kind) || [];
         } else {
             this.id = null;
-            this.kind = '';
-            this.cardio = '';
-            this.energy = '';
-            this.endurance = '';
-            this.strength = '';
-            this.speed = '';
-            this.intensity = '';
+            this.subject = []
+        }
+        console.log('ID:', this.id);
+        console.log('Subjects:', this.subjects);
+    }
+    mapSubjects(data, kind) {
+        if (data && Array.isArray(data) && kind && typeof kind === 'object') {
+            return data.map(item => ({
+                subject: kind[item.kind],
+                key: item.kind || null,
+                fullMark: item.value || null,
+            }));
+        } else {
+            console.error('Error: Data.data is not an array');
+            return [];
         }
     }
-
-    findValueByKind(data, kindName) {
-        const entry = data.find(item => item.kind === kindName);
-        return entry ? entry.value : null;
-    }
 }
-
