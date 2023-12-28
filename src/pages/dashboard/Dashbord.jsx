@@ -81,7 +81,7 @@ export default function Dashboard() {
       </div>
       <SessionsAverageChart className="dash-sessionsaverage" sessions={user && user.averageSessions && user.averageSessions.sessions} />
       <PerformanceChart
-      // data={user && user.performance && user.performance.subjects.key}
+        data={user && user.performance && user.performance.subjects}
       />
       <ScoreChart
         score={user && user.user && user.user.score}

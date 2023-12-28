@@ -21,11 +21,11 @@ export class UserPerformance {
             //     item.kind || null,
             //     item.value || null,
             // ]));
-            return data.map(item => ({
+            return data.map(item => ([{
                 subject: kind[item.kind],
                 key: item.kind || null,
                 fullMark: item.value || null,
-            }));
+            }]));
         } else {
             console.error('Error: Data.data is not an array');
             return [];

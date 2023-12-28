@@ -1,7 +1,6 @@
 import { RadialBarChart, RadialBar } from 'recharts';
 import "./scorechart.css"
 
-
 export default function ScoreChart({ score }) {
   console.log(score)
   // Vérifier si score et score.value sont définis

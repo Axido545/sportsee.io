@@ -10,7 +10,7 @@ import {
 import "./activitychart.css"
 
 export default function ActivityChart({ sessions }) {
-  console.log("Sessions:", sessions);
+  console.log("Sessions // activity chart:", sessions);
 
   return (
     <div className="wrap-activitychart"
