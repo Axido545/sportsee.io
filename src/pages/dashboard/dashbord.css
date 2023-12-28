@@ -10,9 +10,14 @@
 }
 
 .calorie-dash {
-  position: absolute;
-  right: 15px;
-  top: 250px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  right: -19px;
+  top: -212px;
+  /* width: 150px; */
+  justify-content: right;
+  align-items: flex-end;
 }
 
 .activity-chart {
