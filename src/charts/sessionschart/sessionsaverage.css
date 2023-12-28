@@ -1,10 +1,10 @@
-.sessionAverrageVrapper {
+.sessionaverage-wrap {
+    background-color: #F00;
+    display: flex;
+    align-items: flex-start;
+    width: 260px;
     position: relative;
-    cursor: default;
-    width: 258px;
-    height: 222px;
-    top: 211px;
-    left: 70px;
-    background-color: #FF0000;
+    top: -503px;
+    left: 91px;
     border-radius: 5px;
 }
