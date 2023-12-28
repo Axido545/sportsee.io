@@ -58,7 +58,8 @@ export default function Dashboard() {
     }
     getDatas()
   }, [id])
-  console.log(user && user.averageSessions && user.averageSessions.sessions);
+  console.log('user.user.score', user && user.user && user.user.score);
+  console.log('user.user.score', user && user.user && user.user.firstName);
 
   return <>
     <Header />
@@ -77,7 +78,7 @@ export default function Dashboard() {
       <PerformanceChart />
       <ScoreChart
         score={user && user.user && user.user.score}
-      /><p>{user && user.user && user.user.score}</p>
+      />
     </div>
   </>
 }

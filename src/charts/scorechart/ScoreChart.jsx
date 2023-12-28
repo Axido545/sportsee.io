@@ -3,6 +3,7 @@ import { RadialBarChart, RadialBar, Legend, PolarAngleAxis, ResponsiveContainer 
 
 
 export default function ScoreChart({ score }) {
+  console.log(score)
   return <div
     style={{ zIndex: "10", color: 'black', position: "absolute", top: '700px', backgroundColor: '#FBFBFB' }}
   >
