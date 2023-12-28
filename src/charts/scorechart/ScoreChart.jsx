@@ -1,4 +1,4 @@
-import { RadialBarChart, RadialBar, Legend, PolarAngleAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { RadialBarChart, RadialBar } from 'recharts';
 import "./scorechart.css"
 
 
