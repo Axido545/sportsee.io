@@ -14,8 +14,29 @@ export default function SessionsAverageChart({ sessions }) {
           return daysOfWeek[value];
         }}
         />
-        <Tooltip cursor={{ stroke: '#000000', strokeWidth: 2, opacity: 0.3 }} />
-        <Line width={200} type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" />
+        <Tooltip cursor={{
+          stroke: "black",
+          strokeOpacity: 0.1,
+          strokeWidth: 50,
+          height: 400,
+          position: "absolute",
+          top: 0,
+          bottom: 0
+
+        }}
+          wrapperStyle={{ outlineStyle: "none" }}
+          labelStyle={{ display: "none" }} // pr pas afficher la key date
+          formatter={(value) => [value]} // mais afficher la valeur
+          contentStyle={{
+            backgroundColor: "#FBFBFB",
+            padding: 5,
+          }}
+          itemStyle={{
+            color: "black",
+            fontSize: 9,
+            fontWeight: 500,
+          }} />
+        <Line width={200} type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" strokeWidth={2} />
       </LineChart>
     </div>
   );

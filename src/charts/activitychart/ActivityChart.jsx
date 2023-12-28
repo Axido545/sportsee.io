@@ -39,10 +39,25 @@ export default function ActivityChart({ sessions }) {
         left={-229}
       >
         <CartesianGrid strokeDasharray="1 1" />
-        <XAxis dataKey={sessions && sessions.index} />
+        <XAxis dataKey={sessions && sessions.index}
+        />
         <YAxis domaine={[0, 10]} type='number' orientation="right" />
-        <Tooltip />
-
+        <Tooltip
+          itemStyle={{
+            color: "white",
+            fontSize: 9,
+            fontWeight: 500,
+          }}
+          cursor={{
+            fill: "rgba(196, 196, 196, 0.5)",
+          }}
+          labelStyle={{ display: "none" }}
+          wrapperStyle={{ outlineStyle: "none" }}
+          formatter={(value, unit) => [value, unit]}
+          contentStyle={{
+            backgroundColor: "#E60000",
+          }}
+        />
         <Legend
           verticalAlign="top"
           align="right"
