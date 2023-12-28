@@ -64,7 +64,7 @@ export default function Dashboard() {
     }
     getDatas()
   }, [id])
-  console.log(user && user.performance && user.performance.subjects)
+  console.log("Performance infos :" + user && user.performance && user.performance.subjects)
 
   return <>
     <Header />

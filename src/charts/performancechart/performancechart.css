@@ -1,9 +1,11 @@
 .performance-chart {
     width: 200px;
-    height: 200px;
+    height: 191px;
     position: relative;
-    top: -648px;
+    top: -633px;
     border-radius: 5px;
     background-color: #282D30;
     left: 300px;
+    padding-top: 11px;
+    padding-left: 10px;
 }

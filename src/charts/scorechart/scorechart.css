@@ -1,10 +1,10 @@
 .score-chart {
     display: flex;
     position: relative;
-    right: -515px;
-    top: -848px;
+    right: -520px;
+    top: -836px;
     width: 200px;
-    height: 200px;
+    height: 204px;
     background-color: #fbfbfb;
 }
 
