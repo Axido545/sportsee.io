@@ -12,30 +12,27 @@ export class UserPerformance {
         if (getUserPerformanceData && getUserPerformanceData.data) {
             this.id = getUserPerformanceData.data.userId || null;
             this.kind = getUserPerformanceData.data.kind || '';
-            this.cardio = this.findValueByKind(getUserPerformanceData.data, 1) || 0;
-            this.energy = this.findValueByKind(getUserPerformanceData.data, 2) || 0;
-            this.endurance = this.findValueByKind(getUserPerformanceData.data, 3) || 0;
-            this.speed = this.findValueByKind(getUserPerformanceData.data, 5) || 0;
-            this.intensity = this.findValueByKind(getUserPerformanceData.data, 6) || 0;
+            this.cardio = this.findValueByKind(getUserPerformanceData.data, 'cardio') || '';
+            this.energy = this.findValueByKind(getUserPerformanceData.data, 'energy') || '';
+            this.endurance = this.findValueByKind(getUserPerformanceData.data, 'endurance') || '';
+            this.strength = this.findValueByKind(getUserPerformanceData.data, 'strength') || '';
+            this.speed = this.findValueByKind(getUserPerformanceData.data, 'speed') || '';
+            this.intensity = this.findValueByKind(getUserPerformanceData.data, 'intensity') || '';
         } else {
             this.id = null;
             this.kind = '';
-            this.cardio = 0;
-            this.energy = 0;
-            this.endurance = 0;
-            this.strength = 0;
-            this.speed = 0;
-            this.intensity = 0;
+            this.cardio = '';
+            this.energy = '';
+            this.endurance = '';
+            this.strength = '';
+            this.speed = '';
+            this.intensity = '';
         }
     }
 
-    findValueByKind(data, kind) {
-        if (Array.isArray(data)) {
-            const entry = data.find(item => item.kind === kind);
-            return entry ? entry.value : null;
-        } else {
-            return null;
-        }
+    findValueByKind(data, kindName) {
+        const entry = data.find(item => item.kind === kindName);
+        return entry ? entry.value : null;
     }
 }
 
