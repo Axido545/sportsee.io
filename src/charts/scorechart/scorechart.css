@@ -1,0 +1,9 @@
+.score-chart {
+    display: flex;
+    position: relative;
+    right: -515px;
+    top: -804px;
+    width: 200px;
+    height: 200px;
+    background-color: #fbfbfb;
+}
