@@ -15,7 +15,7 @@ export default function SessionsAverageChart({ sessions }) {
         }}
         />
         <Tooltip cursor={{ stroke: '#000000', strokeWidth: 2, opacity: 0.3 }} />
-        <Line type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" />
+        <Line width={200} type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" />
       </LineChart>
     </div>
   );
