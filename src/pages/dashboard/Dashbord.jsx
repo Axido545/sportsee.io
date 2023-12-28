@@ -80,7 +80,9 @@ export default function Dashboard() {
         <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides' />
       </div>
       <SessionsAverageChart className="dash-sessionsaverage" sessions={user && user.averageSessions && user.averageSessions.sessions} />
-      <PerformanceChart performance={user && user.performance && user.performance.subjects} />
+      <PerformanceChart
+      // data={user && user.performance && user.performance.subjects.key}
+      />
       <ScoreChart
         score={user && user.user && user.user.score}
       />

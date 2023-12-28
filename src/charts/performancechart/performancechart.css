@@ -1,3 +1,5 @@
 .performance-chart {
     width: 200px;
+    position: relative;
+    top: -600px;
 }

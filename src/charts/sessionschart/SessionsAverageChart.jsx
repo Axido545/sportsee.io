@@ -7,7 +7,7 @@ export default function SessionsAverageChart({ sessions }) {
   return (
     <div className='sessionaverage-wrap'>
       <LineChart width={200} height={200} data={sessions} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-        <XAxis dataKey="day" />
+        <XAxis tick={{ fill: '#FFFFFF', opacity: '0.5' }} dataKey="day" />
         <YAxis />
         <Tooltip />
         <Legend />
