@@ -4,7 +4,7 @@ import "./performancechart.css"
 export default function performanceChart({ data }) {
     console.log(data)
     return <div className="performance-chart">
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" width={190} position="absolute" top={10} right={10} height={180} data={data}>
+        <RadarChart cx="53%" cy="47%" outerRadius="80%" width={180} position="absolute" top={10} right={10} height={160} data={data}>
             <PolarGrid />
             <PolarAngleAxis dataKey="subject" tickLine={false} dy={3}
                 tick={{
@@ -17,3 +17,5 @@ export default function performanceChart({ data }) {
         </RadarChart>
     </div>
 }
+
+

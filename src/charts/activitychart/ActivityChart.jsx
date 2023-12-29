@@ -44,18 +44,27 @@ export default function ActivityChart({ sessions }) {
         <YAxis domaine={[0, 10]} type='number' orientation="right" />
         <Tooltip
           itemStyle={{
-            color: "white",
-            fontSize: 9,
+            color: "#E60000",
+            fontSize: 0,
             fontWeight: 500,
+            width: "15px",
+            height: "30px"
           }}
           cursor={{
             fill: "rgba(196, 196, 196, 0.5)",
           }}
           labelStyle={{ display: "none" }}
           wrapperStyle={{ outlineStyle: "none" }}
-          formatter={(value, unit) => [value, unit]}
           contentStyle={{
             backgroundColor: "#E60000",
+          }}
+          formatter={(value) => {
+            if (value < 100) {
+              return <div className="kg-toolips" >{`${value} kg`}</div>;
+            } else if (value > 100) {
+              return <div className="cal-toolips" >{`${value} Kcal`}</div>;
+            }
+            return value;
           }}
         />
         <Legend
@@ -81,3 +90,4 @@ export default function ActivityChart({ sessions }) {
     </div>
   );
 }
+

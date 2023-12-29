@@ -8,3 +8,19 @@
     border-radius: 5px;
 
 }
+
+.kg-toolips,
+.cal-toolips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    left: 10px;
+    position: absolute;
+    font-size: 9px;
+}
+
+.cal-toolips {
+    margin-top: 20px;
+    left: 5px;
+}
