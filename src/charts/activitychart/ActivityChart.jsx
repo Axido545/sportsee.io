@@ -47,7 +47,7 @@ export default function ActivityChart({ sessions }) {
             color: "#E60000",
             fontSize: 0,
             fontWeight: 500,
-            width: "15px",
+            width: "12px",
             height: "30px"
           }}
           cursor={{
