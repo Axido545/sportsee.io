@@ -22,8 +22,8 @@ export class User {
             };
             this.calories = getUserData.data.keyData.calorieCount || '';
             this.protein = getUserData.data.keyData.proteinCount || '';
-            this.carbohydrate = getUserData.data.keyData.proteinCount || '';
-            this.lipid = getUserData.data.keyData.proteinCount || '';
+            this.carbohydrate = getUserData.data.keyData.carbohydrateCount || '';
+            this.lipid = getUserData.data.keyData.lipidCount || '';
         } else {
             this.id = null;
             this.firstName = '';
