@@ -45,10 +45,10 @@ export default function ActivityChart({ sessions }) {
         <Tooltip
           itemStyle={{
             color: "#E60000",
-            fontSize: 0,
+            fontSize: 3,
             fontWeight: 500,
             width: "12px",
-            height: "30px"
+            height: "40px"
           }}
           cursor={{
             fill: "rgba(196, 196, 196, 0.5)",
