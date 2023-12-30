@@ -32,11 +32,9 @@
   font-style: normal;
   font-weight: bold;
   line-height: 24px;
-  /* 120% */
   position: absolute;
   top: 35px;
   left: 124px;
-
 }
 
 .block-number {
@@ -47,7 +45,6 @@
   left: 0px;
   top: 6px;
 }
-
 
 .calorie-name {
   color: #74798C;

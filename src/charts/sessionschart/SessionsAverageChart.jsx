@@ -23,7 +23,6 @@ export default function SessionsAverageChart({ sessions }) {
           top: "-10px",
           bottom: "200px",
           zIndex: 10,
-
         }}
           wrapperStyle={{ position: "absolute", left: 0, top: 0, pointerEvents: "none", backgroundColor: "yellow" }} // pointerEvents: "none" permet aux événements de souris de passer à travers le tooltip
           labelStyle={{ display: "none" }} // pr pas afficher la key date

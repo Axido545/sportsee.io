@@ -1,11 +1,7 @@
-
 import "./dashbord.css"
 import Header from '../../layout/header/Header.jsx'
 import Aside from '../../layout/aside/Aside.jsx'
-import {
-  useParams,
-  // useNavigate 
-} from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { getUser, getUserActivity, getUserAverageSessions, getUserPerformance } from '../../services/api.js'
 import { User } from '../../models/user.js'
@@ -25,7 +21,7 @@ import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx
 
 export default function Dashboard() {
   const { id } = useParams()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const [user, setUser] = useState({
     user: null,
     activity: null,
@@ -34,21 +30,23 @@ export default function Dashboard() {
   })
 
   useEffect(() => {
+    console.log('Dashboard les donées sont utilisés avec l id:', id);
+
     async function getDatas() {
       try {
-        //data
         const userDatas = await getUser(id)
+        console.log("donné user :" + userDatas)
+        if (userDatas == "can not get user") {
+          navigate('/page-not-found')
+        }
         const userActivityDatas = await getUserActivity(id)
         const userAverageSessionsData = await getUserAverageSessions(id)
         const userPerformanceDatas = await getUserPerformance(id)
 
-        //models
         const userModel = new User(userDatas)
         const activityModel = new UserActivity(userActivityDatas)
         const averageSessionsModel = new UserAverageSessions(userAverageSessionsData)
         const performanceModel = new UserPerformance(userPerformanceDatas)
-
-
 
         setUser({
           user: userModel,
@@ -58,18 +56,17 @@ export default function Dashboard() {
         })
       } catch (error) {
         console.error("Error:", error);
+        console.log('Dashboard les donées sont utilisés avec l id:', id);
 
-        // navigate('/page-not-found')
       }
     }
     getDatas()
-  }, [id])
+  }, [id, navigate])
   console.log("Performance infos :" + user && user.performance && user.performance.subjects)
 
   return <>
     <Header />
     <Aside />
-
     <div className="dash-wrap">
       <UserBanner firstName={user && user.user && user.user.firstName} />
       <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions} />

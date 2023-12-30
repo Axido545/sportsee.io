@@ -4,8 +4,6 @@ import Dashboard from './pages/dashboard/Dashbord.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Error from './pages/error/error.jsx'
 
-
-
 const router = createBrowserRouter([
   {
     path: '/user/:id',
@@ -13,12 +11,10 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: '*',
+    path: '/*',
     element: <Error />,
   },
 ])
-
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

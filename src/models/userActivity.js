@@ -13,7 +13,6 @@ export class UserActivity {
                 kilogram: session.kilogram || '',
                 calories: session.calories || '',
             }));
-            // this.sessions = getUseActivityData.data.sessions || [];
             this.day = getUseActivityData.data.sessions.day || '';
             this.kilogram = getUseActivityData.data.sessions.kilogram || '';
             this.calories = getUseActivityData.data.sessions.calories || '';
