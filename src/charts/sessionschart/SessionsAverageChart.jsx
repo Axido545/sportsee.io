@@ -18,7 +18,6 @@ export default function SessionsAverageChart({ sessions }) {
           stroke: "black",
           strokeOpacity: 0.1,
           strokeWidth: 50,
-          strokeMiterlimit: 0,
           height: "600px",
           position: "absolute",
           top: "-10px",
