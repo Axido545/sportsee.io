@@ -1,5 +1,6 @@
 import "./sessionsaverage.css"
 import { LineChart, Line, XAxis, Tooltip } from 'recharts';
+import PropTypes from 'prop-types';
 
 export default function SessionsAverageChart({ sessions }) {
   console.log(sessions);
@@ -40,4 +41,8 @@ export default function SessionsAverageChart({ sessions }) {
       </LineChart>
     </div>
   );
+}
+
+SessionsAverageChart.propTypes = {
+  sessions: PropTypes.string.isRequired
 }

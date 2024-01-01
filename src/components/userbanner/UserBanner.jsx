@@ -1,14 +1,11 @@
-import "./userbanner.css"
-import PropTypes from "prop-types"
+import "./userbanner.css";
+import myPropTypes from 'prop-types';
 
-
-export default function UserBanner({ firstName }) {
+export default function UserBanner({ name }) {
     return <div className="user-banner">
-        <h1 className="user-name">Bonjour <span className="user-firstname">{firstName}</span></h1>
+        <h1 className="user-name">Bonjour <span className="user-firstname">{name}</span></h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
 }
 
-UserBanner.prototype = {
-    firstName: PropTypes.string.isRequired,
-}
+UserBanner.propTypes = myPropTypes;

@@ -68,7 +68,7 @@ export default function Dashboard() {
     <Header />
     <Aside />
     <div className="dash-wrap">
-      <UserBanner firstName={user && user.user && user.user.firstName} />
+      <UserBanner name={user && user.user && user.user.firstName} />
       <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions} />
       <div className='calorie-dash'>
         <Calories url={url1} number={user && user.user && user.user.calories} quantity='Cal' name='Calories' />
