@@ -38,7 +38,7 @@ export default function ActivityChart({ sessions }) {
         position="relative"
         left={-229}
       >
-        <CartesianGrid strokeDasharray="1 1" />
+        <CartesianGrid strokeDasharray="1 1" vertical={false} />
         <XAxis dataKey={sessions && sessions.index}
         />
         <YAxis domaine={[0, 10]} type='number' orientation="right" />

@@ -4,8 +4,8 @@ import "./performancechart.css"
 export default function performanceChart({ data }) {
     console.log(data)
     return <div className="performance-chart">
-        <RadarChart cx="53%" cy="47%" outerRadius="80%" width={180} position="absolute" top={10} right={10} height={160} data={data}>
-            <PolarGrid />
+        <RadarChart cx="50%" cy="50%" outerRadius="50%" width={190} position="absolute" top={10} right={10} height={190} data={data}>
+            <PolarGrid radialLines={false} />
             <PolarAngleAxis dataKey="subject" tickLine={false} dy={3}
                 tick={{
                     fontSize: 10,
@@ -13,7 +13,7 @@ export default function performanceChart({ data }) {
                     fill: "white",
                 }} />
             <PolarRadiusAxis tick={false} axisLine={false} />
-            <Radar name="Mike" dataKey="fullMark" stroke="#8884d8" fill="red" fillOpacity={0.6} legendType="none" />
+            <Radar dataKey="fullMark" stroke="#8884d8" fill="red" fillOpacity={0.6} legendType="none" />
         </RadarChart>
     </div>
 }
