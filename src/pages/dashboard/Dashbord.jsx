@@ -19,6 +19,8 @@ import ScoreChart from '../../charts/scorechart/ScoreChart.jsx'
 import SessionsAverageChart from '../../charts/sessionschart/SessionsAverageChart.jsx'
 import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx'
 
+const isMock = false;
+
 export default function Dashboard() {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -34,14 +36,14 @@ export default function Dashboard() {
 
     async function getDatas() {
       try {
-        const userDatas = await getUser(id)
+        const userDatas = await getUser(id, isMock)
         console.log("donné user :" + userDatas)
         if (userDatas == "can not get user") {
           navigate('/page-not-found')
         }
-        const userActivityDatas = await getUserActivity(id)
-        const userAverageSessionsData = await getUserAverageSessions(id)
-        const userPerformanceDatas = await getUserPerformance(id)
+        const userActivityDatas = await getUserActivity(id, isMock)
+        const userAverageSessionsData = await getUserAverageSessions(id, isMock)
+        const userPerformanceDatas = await getUserPerformance(id, isMock)
 
         const userModel = new User(userDatas)
         const activityModel = new UserActivity(userActivityDatas)
