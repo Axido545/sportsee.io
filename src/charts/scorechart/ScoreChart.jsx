@@ -3,7 +3,6 @@ import "./scorechart.css"
 
 export default function ScoreChart({ score }) {
   console.log(score)
-  // Vérifier si score et score.value sont définis
   if (!score || !score.value) {
     return <div>Score non disponible</div>;
   }

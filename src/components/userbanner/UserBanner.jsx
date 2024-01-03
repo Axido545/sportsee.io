@@ -1,5 +1,4 @@
 import "./userbanner.css";
-import myPropTypes from 'prop-types';
 
 export default function UserBanner({ name }) {
     return <div className="user-banner">
@@ -8,4 +7,3 @@ export default function UserBanner({ name }) {
     </div>
 }
 
-UserBanner.propTypes = myPropTypes;
