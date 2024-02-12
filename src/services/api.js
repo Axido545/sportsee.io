@@ -25,7 +25,6 @@ export function getUserPerformance(id, mock) {
         .then(res => res.json())
 }
 
-
 function getUrl(mock, id, route) {
     if (mock) {
         return mockUrl + route + '.json'

@@ -1,4 +1,5 @@
 import "./userbanner.css";
+import PropTypes from 'prop-types';
 
 export default function UserBanner({ name }) {
     return <div className="user-banner">
@@ -7,3 +8,6 @@ export default function UserBanner({ name }) {
     </div>
 }
 
+UserBanner.propTypes = {
+    name: PropTypes.string.isRequired
+}

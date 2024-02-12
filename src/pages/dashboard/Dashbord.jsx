@@ -59,7 +59,6 @@ export default function Dashboard() {
       } catch (error) {
         console.error("Error:", error);
         console.log('Dashboard les donées sont utilisés avec l id:', id);
-
       }
     }
     getDatas()

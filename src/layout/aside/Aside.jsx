@@ -14,7 +14,7 @@ export default function Aside() {
                     <img className="icon-style" src={icon3} alt="icon3" />
                     <img className="icon-style" src={icon4} alt="icon4" />
                 </div>
-                <small className="copyright">Copiryght, SportSee 2020</small>0
+                <small className="copyright">Copiryght, SportSee 2020</small>
             </div>
         </aside>
     )
