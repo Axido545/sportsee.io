@@ -7,10 +7,10 @@ export default function SessionsAverageChart({ sessions }) {
   return (
     <div className='sessionaverage-wrap'>
       <p className="session-title">Durée moyenne des sessions</p>
-      <LineChart width={200} height={200} data={sessions} margin={{ top: 50, right: -10, left: 5, bottom: 5 }}>
-        <XAxis tick={{ fill: '#FFFFFF', opacity: '0.5' }} dataKey="day" tickLine={false} axisLine={false} tickFormatter={(value) => {
+      <LineChart width={200} height={200} data={sessions} margin={{ top: 50, right: 5, left: 5, bottom: 5 }}>
+        <XAxis tick={{ fill: '#FFFFFF', opacity: '0.5' }} margin={{ right: 5, left: 5 }} padding={10} dataKey="day" tickLine={false} axisLine={false} tickFormatter={(value) => {
           // Remplace les valeurs numériques (de dataKey="day")
-          const daysOfWeek = ['', 'L', 'M', 'M', 'J', 'V', 'S', 'D'];
+          const daysOfWeek = ['', 'L', 'M', 'M', 'J', 'V', 'S', 'D '];
           return daysOfWeek[value];
         }}
         />
