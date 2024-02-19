@@ -68,23 +68,21 @@ export default function Dashboard() {
   return <>
     <Header />
     <Aside />
-    <div className="dash-wrap">
-      <UserBanner name={user && user.user && user.user.firstName} />
-      <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions} />
-      <div className='calorie-dash'>
-        <Calories url={url1} number={user && user.user && user.user.calories} quantity='Cal' name='Calories' />
-        <Calories url={url2} number={user && user.user && user.user.protein} quantity='g' name='Protéines' />
-        <Calories url={url3} number={user && user.user && user.user.carbohydrate} quantity='g' name='Glucides' />
-        <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides' />
-      </div>
-      <SessionsAverageChart className="dash-sessionsaverage" sessions={user && user.averageSessions && user.averageSessions.sessions} />
-      <PerformanceChart
-        data={user && user.performance && user.performance.subjects}
-      />
-      <ScoreChart
-        score={user && user.user && user.user.score}
-      />
+    <UserBanner name={user && user.user && user.user.firstName} />
+    <ActivityChart className="activity-chart" sessions={user && user.activity && user.activity.sessions} />
+    <div className='calorie-dash'>
+      <Calories url={url1} number={user && user.user && user.user.calories} quantity='Cal' name='Calories' />
+      <Calories url={url2} number={user && user.user && user.user.protein} quantity='g' name='Protéines' />
+      <Calories url={url3} number={user && user.user && user.user.carbohydrate} quantity='g' name='Glucides' />
+      <Calories url={url4} number={user && user.user && user.user.lipid} quantity='g' name='Lipides' />
     </div>
+    <SessionsAverageChart className="dash-sessionsaverage" sessions={user && user.averageSessions && user.averageSessions.sessions} />
+    <PerformanceChart
+      data={user && user.performance && user.performance.subjects}
+    />
+    <ScoreChart
+      score={user && user.user && user.user.score}
+    />
   </>
 }
 
