@@ -3,6 +3,24 @@ import { LineChart, Line, XAxis, Tooltip, YAxis } from 'recharts';
 
 export default function SessionsAverageChart({ sessions }) {
   console.log(sessions);
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p className="label">{`${payload[0].value} min`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  const CustomHover = ({ points }) => {
+    return (
+      <rect x={points[0].x} y="0" height='100%' width="50px" fill="rgba(0, 0, 0, 0.1)" />
+    )
+  }
+
 
   return (
     <div className='sessionaverage-wrap'>
@@ -14,29 +32,8 @@ export default function SessionsAverageChart({ sessions }) {
           return daysOfWeek[value];
         }}
         />
+        <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} />
 
-        <Tooltip cursor={{
-          stroke: "black",
-          strokeOpacity: 0.1,
-          strokeWidth: 50,
-          height: "600px",
-          position: "absolute",
-          top: "-10px",
-          bottom: "200px",
-          zIndex: 10,
-        }}
-          wrapperStyle={{ position: "absolute", left: 0, top: 0, pointerEvents: "none", backgroundColor: "yellow" }} // pointerEvents: "none" permet aux événements de souris de passer à travers le tooltip
-          labelStyle={{ display: "none" }} // pr pas afficher la key date
-          formatter={(value) => [value]} // mais afficher la valeur
-          contentStyle={{
-            backgroundColor: "#FBFBFB",
-            padding: 5,
-          }}
-          itemStyle={{
-            color: "black",
-            fontSize: 9,
-            fontWeight: 500,
-          }} />
         <Line width={200} zIndex={1} type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" strokeWidth={2} dot={false} />
       </LineChart>
     </div>
