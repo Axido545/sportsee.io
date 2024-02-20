@@ -3,6 +3,8 @@ import "./performancechart.css"
 
 export default function performanceChart({ data }) {
     console.log(data)
+
+
     return <div className="performance-chart">
         <RadarChart cx="50%" cy="50%" outerRadius="50%" width={190} position="absolute" top={10} right={10} height={190} data={data}>
             <PolarGrid radialLines={false} />

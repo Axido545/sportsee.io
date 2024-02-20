@@ -19,7 +19,7 @@ import ScoreChart from '../../charts/scorechart/ScoreChart.jsx'
 import SessionsAverageChart from '../../charts/sessionschart/SessionsAverageChart.jsx'
 import PerformanceChart from '../../charts/performancechart/PerformanceChart.jsx'
 
-const isMock = false;
+const isMock = true;
 
 export default function Dashboard() {
   const { id } = useParams()
