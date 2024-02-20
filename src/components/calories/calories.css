@@ -33,15 +33,19 @@
   line-height: 24px;
   top: 35px;
   left: 124px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .block-number {
-  width: 60px;
+  width: 75px;
   height: 60px;
   padding: 14px;
-  position: absolute;
-  left: 0px;
-  top: 6px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .calorie-name {
@@ -50,8 +54,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 0;
-  position: absolute;
-  left: 124px;
-  top: 55px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
