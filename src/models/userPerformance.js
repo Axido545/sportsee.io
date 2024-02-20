@@ -9,6 +9,8 @@ export class UserPerformance {
             this.id = getUserPerformanceData.data.userId || null;
             this.subjects = this.mapSubjects(getUserPerformanceData.data.data, getUserPerformanceData.data.kind) || [];
             this.data = getUserPerformanceData.data.data || []
+            this.sortData(); // Appel de la méthode pour réorganiser les données
+
         } else {
             this.id = null;
             this.subjects = []
@@ -29,5 +31,11 @@ export class UserPerformance {
             return [];
         }
 
+    }
+    sortData() {
+        this.data.sort((a, b) => {
+            // Comparaison numérique du sujet (en tant qu'entier)
+            return parseInt(a.key) - parseInt(b.key);
+        });
     }
 }
