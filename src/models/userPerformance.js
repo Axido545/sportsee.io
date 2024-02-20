@@ -9,8 +9,6 @@ export class UserPerformance {
             this.id = getUserPerformanceData.data.userId || null;
             this.subjects = this.mapSubjects(getUserPerformanceData.data.data, getUserPerformanceData.data.kind) || [];
             this.data = getUserPerformanceData.data.data || []
-            this.sortData(); // Appel de la méthode pour réorganiser les données
-
         } else {
             this.id = null;
             this.subjects = []
@@ -21,21 +19,30 @@ export class UserPerformance {
     }
     mapSubjects(data, kind) {
         if (data && Array.isArray(data) && kind && typeof kind === 'object') {
-            return data.map(item => ({
-                subject: kind[item.kind],
-                key: item.kind || null,
-                fullMark: item.value || null,
-            }));
+            const englishToFrench = {
+                'intensity': 'intensité',
+                'speed': 'vitesse',
+                'strength': 'force',
+                'endurance': 'endurance',
+                'energy': 'énergie',
+                'cardio': 'cardio'
+            };
+            const subjectOrder = ['intensity', 'speed', 'strength', 'endurance', 'energy', 'cardio'];
+            const subjectsData = {};
+            data.forEach(item => {
+                const subjectName = kind[item.kind];
+                const translatedSubjectName = englishToFrench[subjectName] || subjectName;
+                subjectsData[translatedSubjectName] = {
+                    subject: translatedSubjectName,
+                    key: item.kind || null,
+                    fullMark: item.value || null,
+                };
+            });
+            return subjectOrder.map(subject => subjectsData[englishToFrench[subject]]);
+
         } else {
             console.error('Error: Data.data is not an array');
             return [];
         }
-
-    }
-    sortData() {
-        this.data.sort((a, b) => {
-            // Comparaison numérique du sujet (en tant qu'entier)
-            return parseInt(a.key) - parseInt(b.key);
-        });
     }
 }
