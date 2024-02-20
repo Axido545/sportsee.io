@@ -1,7 +1,7 @@
 .aside {
     background-color: black;
     width: 117px;
-    height: 780px;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     position: absolute;

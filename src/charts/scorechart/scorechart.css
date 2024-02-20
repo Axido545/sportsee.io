@@ -1,8 +1,8 @@
 .score-chart {
     display: flex;
     position: relative;
-    right: -520px;
-    top: -836px;
+    left: 429px;
+    top: -880px;
     width: 200px;
     height: 204px;
     background-color: #fbfbfb;
