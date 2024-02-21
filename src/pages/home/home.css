@@ -5,3 +5,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.btn-home {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    width: 100px;
+    border: solid 1px red;
+}

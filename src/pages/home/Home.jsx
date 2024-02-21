@@ -8,8 +8,8 @@ export default function Home() {
         <Header />
         <Aside />
         <div className='main-home'>
-            <Link to="/user/12"><button> User 12</button></Link>
-            <Link to="/user/18"><button> User 18</button></Link >
+            <Link to="/user/12"><button className='btn-home'> User 12</button></Link>
+            <Link to="/user/18"><button className='btn-home'> User 18</button></Link >
         </div>
     </div >
 }
