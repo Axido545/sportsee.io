@@ -8,7 +8,7 @@ import {
   Legend,
 } from "recharts";
 import "./activitychart.css"
-
+/* eslint react/prop-types: 0 */
 export default function ActivityChart({ sessions }) {
   console.log("Sessions // activity chart:", sessions);
 
@@ -17,7 +17,6 @@ export default function ActivityChart({ sessions }) {
     >
       <p style={{
         fontSize: "11px",
-        top: '-10px',
         left: '20px',
         position: 'absolute',
         fontWeight: 'bold'
@@ -39,7 +38,7 @@ export default function ActivityChart({ sessions }) {
         left={-229}
       >
         <CartesianGrid strokeDasharray="1 1" vertical={false} />
-        <XAxis dataKey={sessions && sessions.index}
+        <XAxis dataKey={sessions}
         />
         <YAxis domaine={[0, 10]} type='number' orientation="right" />
         <Tooltip

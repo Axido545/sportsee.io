@@ -1,9 +1,9 @@
 import "./sessionsaverage.css"
-import { LineChart, Line, XAxis, Tooltip, YAxis } from 'recharts';
-
+import { LineChart, Line, XAxis, Tooltip } from 'recharts';
+/* eslint react/prop-types: 0 */
 export default function SessionsAverageChart({ sessions }) {
   console.log(sessions);
-  const CustomTooltip = ({ active, payload, label }) => {
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className="custom-tooltip">
@@ -34,7 +34,7 @@ export default function SessionsAverageChart({ sessions }) {
         />
         <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} />
 
-        <Line width={200} zIndex={1} type="monotone" dataKey="sessionLength" opacity={0.7} stroke="white" strokeWidth={2} dot={false} />
+        <Line zIndex={1} type="natural" dataKey="sessionLength" opacity={0.7} stroke="white" strokeWidth={2} dot={false} />
       </LineChart>
     </div>
   );
